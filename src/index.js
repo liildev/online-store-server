@@ -12,8 +12,13 @@ console.log(PORT);
 
 const app = express();
 
+let corsOptions = {
+  origin: "http://localhost:3000",
+};
+
+app.use(cors(corsOptions));
+
 app.use(express.json());
-app.use(cors());
 
 app.use(express.static(path.resolve(process.cwd(), "static")));
 app.use(fileUpload({}));
