@@ -8,15 +8,11 @@ const errorHandler = require("./middleware/ErrorHandlingMiddleware");
 const path = require("path");
 
 const PORT = process.env.PORT || 6699;
-console.log(PORT);
 
 const app = express();
 
-let corsOptions = {
-  origin: "http://localhost:3000",
-};
 
-app.use(cors(corsOptions));
+app.use(cors());
 
 app.use(express.json());
 
